@@ -13,10 +13,4 @@ abstract class AbstractProcessor {
      */
     abstract public function process($logFilePath);
 
-    /**
-     * @return static
-     */
-    public static function getInstance() {
-        return new static();
-    }
 }

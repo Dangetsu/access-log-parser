@@ -31,7 +31,9 @@
 
 ## Установка
 
-todo
+```$xslt
+composer require dangetsu/access-log-statistic
+```
 
 ## Использование
 
@@ -41,7 +43,8 @@ use AccessLogParser\Processor;
 require_once 'vendor/autoload.php';
 
 $parser = new AccessLogParser\Application();
-$result = $parser->buildStatistic('access.log', Processor\StandardProcessor::getInstance());
+$result = $parser->buildStatistic('access.log', new Processor\StandardProcessor());
+$json = $parser->format($result, new Format\Json()); //Если нужно преобразовать в какой-то формат(сейчас доступен только JSON)
 ```
 
 ## Расширение приложения
