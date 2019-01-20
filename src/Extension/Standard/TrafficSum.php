@@ -6,9 +6,9 @@
 namespace AccessLogParser\Extension\Standard;
 
 use AccessLogParser\Entity;
-use AccessLogParser\Extension;
+use AccessLogParser\Handler;
 
-class TrafficSum extends Extension\AbstractExtension {
+class TrafficSum implements Handler\Extension {
 
     /** @var int */
     private $_traffic = 0;

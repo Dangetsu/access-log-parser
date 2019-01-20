@@ -7,8 +7,9 @@ namespace AccessLogParser\Processor;
 
 use AccessLogParser\Entity;
 use AccessLogParser\Extension;
+use AccessLogParser\Handler;
 
-class StandardProcessor extends AbstractProcessor {
+class StandardProcessor implements Handler\Processor {
 
     const FILE_OPEN_MODE = 'r';
 
@@ -63,7 +64,7 @@ class StandardProcessor extends AbstractProcessor {
     }
 
     /**
-     * @param Extension\AbstractExtension[] $extensions
+     * @param Handler\Extension[] $extensions
      * @param Entity\AbstractEntity $entity
      */
     private function _sendDataToExtensions(array $extensions, Entity\AbstractEntity $entity) {
@@ -73,7 +74,7 @@ class StandardProcessor extends AbstractProcessor {
     }
 
     /**
-     * @param Extension\AbstractExtension[] $extensions
+     * @param Handler\Extension[] $extensions
      * @return array
      */
     private function _getResultFromExtensions(array $extensions) {

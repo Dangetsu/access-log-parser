@@ -6,10 +6,9 @@
 namespace Test\Custom;
 
 use AccessLogParser\Entity;
-use AccessLogParser\Extension;
-use Test\Custom;
+use AccessLogParser\Handler;
 
-class UniqueIpCountExtension extends Extension\AbstractExtension {
+class UniqueIpCountExtension implements Handler\Extension {
 
     /** @var array */
     private $_ips = [];
@@ -18,7 +17,7 @@ class UniqueIpCountExtension extends Extension\AbstractExtension {
      * @param Entity\AbstractEntity $entity
      */
     public function process(Entity\AbstractEntity $entity) {
-        /** @var Custom\AccessLogEntity $entity */
+        /** @var AccessLogEntity $entity */
         if (!array_key_exists($entity->ip, $this->_ips)) {
             $this->_ips[$entity->ip] = null; // Поиск через ключ - быстрее
         }

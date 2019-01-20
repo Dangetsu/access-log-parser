@@ -5,18 +5,15 @@
 
 namespace AccessLogParser;
 
-use AccessLogParser\Format;
-use AccessLogParser\Processor;
-
 class Application {
 
     /**
      * @param string $logFilePath
-     * @param Processor\AbstractProcessor $processor
+     * @param Handler\Processor $processor
      * @return mixed
      * @throws Exception\ExistenceLogFileError
      */
-    public function buildStatistic($logFilePath, Processor\AbstractProcessor $processor) {
+    public function buildStatistic($logFilePath, Handler\Processor $processor) {
         if (!file_exists($logFilePath) || !is_readable($logFilePath)) {
             throw new Exception\ExistenceLogFileError('Access.log file not exists or not readable!');
         }
@@ -25,10 +22,10 @@ class Application {
 
     /**
      * @param array $data
-     * @param Format\AbstractFormat $format
+     * @param Handler\Format $format
      * @return mixed
      */
-    public function format(array $data, Format\AbstractFormat $format) {
+    public function format(array $data, Handler\Format $format) {
         return $format->convert($data);
     }
 }

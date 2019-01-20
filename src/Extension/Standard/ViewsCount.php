@@ -6,9 +6,9 @@
 namespace AccessLogParser\Extension\Standard;
 
 use AccessLogParser\Entity;
-use AccessLogParser\Extension;
+use AccessLogParser\Handler;
 
-class ViewsCount extends Extension\AbstractExtension {
+class ViewsCount implements Handler\Extension {
 
     /** @var int */
     private $_countViews = 0;

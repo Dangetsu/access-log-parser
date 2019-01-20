@@ -6,9 +6,9 @@
 namespace AccessLogParser\Extension\Standard;
 
 use AccessLogParser\Entity;
-use AccessLogParser\Extension;
+use AccessLogParser\Handler;
 
-class CrawlersCounter extends Extension\AbstractExtension {
+class CrawlersCounter implements Handler\Extension {
 
     /** @var array */
     private $_crawlers = [];

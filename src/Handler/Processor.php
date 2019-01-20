@@ -3,14 +3,14 @@
  * @author Vladislav Alatorcev(Dangetsu) <clannad.business@gmail.com>
  */
 
-namespace AccessLogParser\Processor;
+namespace AccessLogParser\Handler;
 
-abstract class AbstractProcessor {
+interface Processor {
 
     /**
      * @param string $logFilePath
      * @return array
      */
-    abstract public function process($logFilePath);
+    public function process($logFilePath);
 
 }

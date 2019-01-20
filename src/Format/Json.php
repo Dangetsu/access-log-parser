@@ -5,7 +5,9 @@
 
 namespace AccessLogParser\Format;
 
-class Json extends AbstractFormat {
+use AccessLogParser\Handler;
+
+class Json implements Handler\Format {
 
     /**
      * @var array $data

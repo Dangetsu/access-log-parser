@@ -6,9 +6,9 @@
 namespace AccessLogParser\Extension\Standard;
 
 use AccessLogParser\Entity;
-use AccessLogParser\Extension;
+use AccessLogParser\Handler;
 
-class UniqueUrls extends Extension\AbstractExtension {
+class UniqueUrls implements Handler\Extension {
 
     /** @var array */
     private $_urls = [];

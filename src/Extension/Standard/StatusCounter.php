@@ -6,9 +6,9 @@
 namespace AccessLogParser\Extension\Standard;
 
 use AccessLogParser\Entity;
-use AccessLogParser\Extension;
+use AccessLogParser\Handler;
 
-class StatusCounter extends Extension\AbstractExtension {
+class StatusCounter implements Handler\Extension {
 
     /** @var array */
     private $_statuses = [];

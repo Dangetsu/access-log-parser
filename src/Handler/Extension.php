@@ -3,20 +3,20 @@
  * @author Vladislav Alatorcev(Dangetsu) <clannad.business@gmail.com>
  */
 
-namespace AccessLogParser\Extension;
+namespace AccessLogParser\Handler;
 
 use AccessLogParser\Entity;
 
-abstract class AbstractExtension {
+interface Extension {
 
     /**
      * @param Entity\AbstractEntity $entity
      */
-    abstract public function process(Entity\AbstractEntity $entity);
+    public function process(Entity\AbstractEntity $entity);
 
     /**
      * @return mixed
      */
-    abstract public function result();
+    public function result();
 
 }
