@@ -1,15 +1,31 @@
 {
     "name": "dangetsu/access-log-statistic",
     "description": "Application for parsing apache logs and building statistics",
+    "keywords": ["access","log","statistic"],
+    "homepage": "https://github.com/Dangetsu/access-log-statistic",
     "type": "library",
     "license": "MIT",
     "require": {
         "php": ">=5.6.0"
     },
+    "authors": [
+        {
+            "name": "Vladislav Alatorcev",
+            "email": "clannad_forever@mail.ru",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "AccessLogParser\\": "src/",
             "Test\\": "test/"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Dangetsu/access-log-statistic.git"
+        }
+    ]
 }
