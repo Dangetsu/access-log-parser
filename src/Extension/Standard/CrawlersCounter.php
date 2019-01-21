@@ -16,7 +16,7 @@ class CrawlersCounter implements Handler\Extension {
     /**
      * @param Entity\AbstractEntity $entity
      */
-    public function process(Entity\AbstractEntity $entity) {
+    final public function process(Entity\AbstractEntity $entity) {
         /** @var Entity\Standard\AccessLog $entity */
         $crawlers = $this->_getCrawlers();
         foreach ($crawlers as $crawler => $agent) {
@@ -29,7 +29,7 @@ class CrawlersCounter implements Handler\Extension {
     /**
      * @return array
      */
-    public function result() {
+    final public function result() {
         return $this->_crawlers;
     }
 

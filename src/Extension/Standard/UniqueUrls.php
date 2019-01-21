@@ -16,7 +16,7 @@ class UniqueUrls implements Handler\Extension {
     /**
      * @param Entity\AbstractEntity $entity
      */
-    public function process(Entity\AbstractEntity $entity) {
+    final public function process(Entity\AbstractEntity $entity) {
         /** @var Entity\Standard\AccessLog $entity */
         if (!array_key_exists($entity->path, $this->_urls)) {
             $this->_urls[$entity->path] = null; // Поиск через ключ - быстрее
@@ -26,7 +26,7 @@ class UniqueUrls implements Handler\Extension {
     /**
      * @return int
      */
-    public function result() {
+    final public function result() {
         return count($this->_urls);
     }
 }

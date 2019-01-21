@@ -16,7 +16,7 @@ class StatusCounter implements Handler\Extension {
     /**
      * @param Entity\AbstractEntity $entity
      */
-    public function process(Entity\AbstractEntity $entity) {
+    final public function process(Entity\AbstractEntity $entity) {
         /** @var Entity\Standard\AccessLog $entity */
         $this->_incStatusCount($entity->status);
     }
@@ -24,7 +24,7 @@ class StatusCounter implements Handler\Extension {
     /**
      * @return array
      */
-    public function result() {
+    final public function result() {
         return $this->_statuses;
     }
 

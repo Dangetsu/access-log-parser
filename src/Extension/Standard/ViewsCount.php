@@ -16,14 +16,14 @@ class ViewsCount implements Handler\Extension {
     /**
      * @param Entity\AbstractEntity $entity
      */
-    public function process(Entity\AbstractEntity $entity) {
+    final public function process(Entity\AbstractEntity $entity) {
         $this->_countViews++;
     }
 
     /**
      * @return int
      */
-    public function result() {
+    final public function result() {
         return $this->_countViews;
     }
 }

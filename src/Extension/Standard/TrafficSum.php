@@ -16,7 +16,7 @@ class TrafficSum implements Handler\Extension {
     /**
      * @param Entity\AbstractEntity $entity
      */
-    public function process(Entity\AbstractEntity $entity) {
+    final public function process(Entity\AbstractEntity $entity) {
         /** @var Entity\Standard\AccessLog $entity */
         $this->_traffic += (int) $entity->length;
     }
@@ -24,7 +24,7 @@ class TrafficSum implements Handler\Extension {
     /**
      * @return int
      */
-    public function result() {
+    final public function result() {
         return $this->_traffic;
     }
 }

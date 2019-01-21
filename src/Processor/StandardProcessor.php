@@ -17,7 +17,7 @@ class StandardProcessor implements Handler\Processor {
      * @param string $logFilePath
      * @return array
      */
-    public function process($logFilePath) {
+    final public function process($logFilePath) {
         $extensions = $this->_getExtensionsWithResponseIndex();
 
         $file = fopen($logFilePath, self::FILE_OPEN_MODE);
